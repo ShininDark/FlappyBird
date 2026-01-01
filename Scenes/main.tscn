@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1yeflacwb5cq"]
+
+[ext_resource type="Script" uid="uid://76ns7o0g75t3" path="res://Scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://s486m4l6vxv3" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="PipeTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

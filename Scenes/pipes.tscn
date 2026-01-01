@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://7a5rbjag2lop"]
+
+[ext_resource type="Script" uid="uid://dmd0xki3x2x6r" path="res://Scripts/pipes.gd" id="1_7ktcp"]
+
+[node name="Pipes" type="Area2D"]
+script = ExtResource("1_7ktcp")
+
+[node name="TopPipe" type="Sprite2D" parent="."]
+
+[node name="BottomPipe" type="Sprite2D" parent="."]
+
+[node name="TopPipeCollision" type="CollisionShape2D" parent="."]
+
+[node name="BottomPipeCollision" type="CollisionShape2D" parent="."]
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="ScoreDetectCollision" type="CollisionShape2D" parent="ScoreArea"]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
