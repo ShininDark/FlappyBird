@@ -22,10 +22,10 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		ScoreManager.score = 0
+		print("Die")
 		get_tree().reload_current_scene()
 
 
@@ -33,4 +33,3 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_score_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		ScoreManager.score += 1
-		

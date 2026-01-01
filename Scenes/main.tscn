@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1yeflacwb5cq"]
+[gd_scene load_steps=4 format=3 uid="uid://c1yeflacwb5cq"]
 
 [ext_resource type="Script" uid="uid://76ns7o0g75t3" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://s486m4l6vxv3" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://7a5rbjag2lop" path="res://Scenes/pipes.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(199, 183)
+position = Vector2(208, 253)
 
 [node name="PipeTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -26,3 +27,8 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
+
+[node name="Pipes" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(1137, -3)
+
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
